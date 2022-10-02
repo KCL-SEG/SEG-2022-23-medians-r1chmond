@@ -1,5 +1,14 @@
 """Median calculator."""
-"""ENTER YOUR SOLUTION HERE!"""
+def getMedian(list):
+    list.sort()
+    index = len(list)
+    if(index == 1):
+        return list[0]
+    elif(index % 2 == 0):
+        return (list[int(index/2)] + list[int(index/2) - 1]) / 2
+    else:
+        return list[int(index/2)]
+
 
 while True:
     try:
@@ -9,4 +18,4 @@ while True:
         print("Some input could not be converted to a number!")
     else:
         break
-print(numbers)
+print("Median of " + str(numbers) + " is : " + str(getMedian(numbers)))
